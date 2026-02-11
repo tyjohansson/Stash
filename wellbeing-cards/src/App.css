@@ -1,0 +1,258 @@
+/* ===== App transitions ===== */
+.app {
+  min-height: 100vh;
+  transition: opacity 0.15s ease;
+}
+.fade-in {
+  opacity: 1;
+}
+.fade-out {
+  opacity: 0;
+}
+
+/* ===== Home Screen ===== */
+.home-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2.5rem;
+}
+
+.home-header {
+  text-align: center;
+  max-width: 600px;
+}
+
+.home-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.home-subtitle {
+  font-size: 1.15rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.home-progress {
+  margin: 0.75rem 0 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* ===== Category Grid ===== */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 720px;
+  width: 100%;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.75rem 1rem;
+  border-radius: 16px;
+  border: 2px solid var(--cat-light);
+  background: var(--cat-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.category-card:hover {
+  border-color: var(--cat-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.category-icon {
+  font-size: 2.2rem;
+}
+
+.category-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cat-dark);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.category-seen {
+  font-size: 0.78rem;
+  color: var(--cat-color);
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.category-hint {
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 400;
+}
+
+/* Random card */
+.random-card {
+  --cat-color: #6366f1;
+  --cat-light: #eef2ff;
+  --cat-dark: #3730a3;
+  border-style: dashed;
+}
+
+/* ===== Question Screen ===== */
+.question-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    160deg,
+    var(--cat-light) 0%,
+    #ffffff 40%,
+    #ffffff 100%
+  );
+}
+
+.question-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  flex-shrink: 0;
+}
+
+.back-button {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  color: #475569;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.back-button:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #1e293b;
+}
+
+.question-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.question-category {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cat-dark);
+}
+
+.question-counter {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* ===== Question Body ===== */
+.question-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 4rem;
+}
+
+.question-text {
+  font-size: clamp(2rem, 4.5vw, 4.2rem);
+  font-weight: 600;
+  color: #1e293b;
+  text-align: center;
+  line-height: 1.3;
+  max-width: 900px;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* ===== Question Footer ===== */
+.question-footer {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 2rem 2.5rem;
+  flex-shrink: 0;
+}
+
+.next-button {
+  background: var(--cat-color);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.next-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.05);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .home-title {
+    font-size: 1.8rem;
+  }
+
+  .question-body {
+    padding: 2rem;
+  }
+
+  .question-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  .question-meta {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card {
+    padding: 1.25rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  .category-icon {
+    font-size: 1.8rem;
+  }
+}
