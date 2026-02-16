@@ -1,0 +1,16 @@
+{
+  "name": "task-extraction-engine",
+  "version": "1.0.0",
+  "description": "Task extraction engine for Chief of Staff — parses emails, Teams chats, meeting notes, and ad hoc requests into structured task lists",
+  "main": "src/index.js",
+  "bin": {
+    "task-extract": "./src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "test": "node test/test-extraction.js"
+  },
+  "keywords": ["task-extraction", "productivity", "chief-of-staff"],
+  "license": "MIT",
+  "type": "module"
+}
